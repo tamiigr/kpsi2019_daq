@@ -173,7 +173,7 @@
 #define DSP       29
 #define A3100     31
 #define MADC32    32    // Mesytech ADC
-#define MQDC32    32    // Mesytech QDC
+#define MQDC32    33    // Mesytech QDC
 #define LUPOIO      41
 #define LUPOTS      42
 #define LUPOMTS     43  // for dead time monitor

@@ -60,11 +60,13 @@ void startup(void){
   madc32_map_module_id(0, MADC32_MAPN);
   madc32_map_irq_level(0, MADC32_MAPN);
   madc32_map_input_range(0x1, MADC32_MAPN);   // 0:4V, 1:10V, 2:8V
+  madc32_map_start_acq(MADC32_MAPN);
   madc32_map_clear(MADC32_MAPN);
   madc32_map_fifo_reset(MADC32_MAPN);
   madc32_map_reset_ctr_ab(MADC32_MAPN);  // reset time stamp
   madc32_map_irq_level(INTLEVEL, MADC32_MAPN);
-  madc32_map_start_acq(MADC32_MAPN);
+
+
 #endif
 
   /* configure MQDC32 */
@@ -82,6 +84,8 @@ void startup(void){
 #ifdef USE_V260  
   v260_map_clear(V260_MAPN);
 #endif
+
+  madc32_map_start_acq(MADC32_MAPN);
 
   /* VETO clear, start DAQ */
   vlupodm_pulse_map(LUPOMAPN,1);

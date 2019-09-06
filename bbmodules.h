@@ -25,7 +25,7 @@
 //#define USE_1190
 #define USE_MADC
 #define USE_MQDC
-//#define USE_V260
+#define USE_V260
 
 /* Definitions for LUPO */
 #define LUPOADDR 0x30000000
