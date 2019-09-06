@@ -47,7 +47,7 @@
 
 /* Definitions for V1190s */
 #define V1190_BASE_ADR  0x00500000 // now used for KPSI2019
-#define V1190_MAP_SIZE  0x00030000
+#define V1190_MAP_SIZE  0x00010000
 #define V1190_MAPN 2  // for DMA 2-3 will be reserved
 #define V1190_MAIKO_ADR 0x00050000
 #define V1190_BDC1_ADR  0x00060000
@@ -55,7 +55,7 @@
 
 /* Definitions for MADC32 */
 #define MADC32_BASE_ADR 0x32010000
-#define MADC32_MAP_SIZE     0xa000
+#define MADC32_MAP_SIZE 0xa000
 #define MADC32_MAPN     1
 
 /* Definition for V977 */

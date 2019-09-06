@@ -4,7 +4,7 @@ void map(void){
 //  univ_init_window(V977ADR, V977REGSIZE, A32, V977_MAPN);
 
   /* V1190 mapping */
-  univ_init_window(V1190_BASE_ADR, V1190_MAP_SIZE, A32, V1190_MAPN);
+ // univ_init_window(V1190_BASE_ADR, V1190_MAP_SIZE, A32, V1190_MAPN);
 
   /* MADC32 mapping */
   univ_init_window(MADC32_BASE_ADR, MADC32_MAP_SIZE, A32, MADC32_MAPN);
@@ -116,7 +116,7 @@ void startup(void){
   //Start DAQ
 
    // initialize v1190, KPSI2019
-   v1X90_map_clear(V1190_MAPN);
+   //v1X90_map_clear(V1190_MAPN);
  
 
   //trigger from MADC
@@ -127,5 +127,6 @@ void startup(void){
   madc32_map_start_acq(MADC32_MAPN);
   madc32_map_clear(MADC32_MAPN);
   madc32_map_irq_level(INTLEVEL, MADC32_MAPN);
+  vlupodm_pulse_map(LUPOMAPN,1);
   printk("DAQ start.\n");
 }
