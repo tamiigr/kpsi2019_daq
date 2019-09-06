@@ -177,18 +177,18 @@ void vlupots_disable_interrupt_map(int n){
 }
 
 
-int vlupodm_segclk10m_map(int n){
+int vlupodm_segclk1m_map(int n){
    
-  univ_map_read32(VLUPO_DM_CLK10M, (long *)(data+mp), n);
+  univ_map_read32(VLUPO_DM_CLK1M, (long *)(data+mp), n);
   mp +=2;
   segmentsize +=2;
 
   return segmentsize;
 }
 
-int vlupodm_scrclk10m_map(int n){
+int vlupodm_scrclk1m_map(int n){
 
-  univ_map_read32(VLUPO_DM_CLK10M, (long *)(data+mp), n);
+  univ_map_read32(VLUPO_DM_CLK1M, (long *)(data+mp), n);
   mp += 2;
   scrsize += 2;
   if(eventsize > 0) eventsize += 2;
@@ -448,26 +448,3 @@ void vlupodm_disable_interrupt_map(int n){
   univ_map_write16(VLUPO_DM_INTDISABLE, &val, n);
 
 }
-
-int vlupodm_clk_map(int n){
-  univ_map_read32(VLUPO_DM_CLK10M, (long *)(data+mp), n);
-  mp += 2;
-  univ_map_read32(VLUPO_DM_CLK10K, (long *)(data+mp), n);
-  mp += 2;
-
-  segmentsize += 4;
-
-  return segmentsize;
-}
-
-int vlupodm_scrdummy(void){
-  int zr=0;
- 
-  memcpy((char *)(data+mp), (char *)&zr, 4);
-  mp += 2;
-  scrsize += 2;
-  if(eventsize > 0) eventsize += 2;
- 
-  return scrsize;
-}
- 

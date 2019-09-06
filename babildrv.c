@@ -90,6 +90,7 @@ MODULE_AUTHOR("Hidetada Baba");
 #include "madc32.c"
 #include "rpv130.c"
 #include "tmb2.c"
+#include "vlupomap.c"
 #endif
 
 #ifdef CCNET

@@ -1,7 +1,7 @@
 #define SEGIDGEN(device,focal,detector,module) ((((device<<6 | focal) << 6) | detector)<<8 | module)    
 
 #include "./segidlist.h"
-#define EFN 10
+#define EFN 94
 
 #define BBRL
 //#define MAXBUFF    8192
@@ -22,11 +22,15 @@
 #define A32 0x09
 #define A16 0x29
 
-#define USE_RPV
-#define USE_1190
+#define LUPOADDR 0x30000000
+#define LUPOMAPN 1
+
+//#define USE_RPV
+//#define USE_1190
 #define USE_MADC
-#define USE_TMB2
+//#define USE_TMB2
 //#define USE_V775
+//#define USE_SIS3800
 
 /* Definitions for RPV130*/
 #define RPV130ADR 0xf000
@@ -50,7 +54,7 @@
 #define V1190_BDC2_ADR  0x00070000
 
 /* Definitions for MADC32 */
-#define MADC32_BASE_ADR 0x32000000
+#define MADC32_BASE_ADR 0x32010000
 #define MADC32_MAP_SIZE     0xa000
 #define MADC32_MAPN     1
 

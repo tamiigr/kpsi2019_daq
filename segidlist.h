@@ -179,7 +179,7 @@
 //#define MUST2VXI    50
 #define TMB2    50
 #define MDAQ        58  // for special case
-#define UNDEFINE8   8
+#define SIS3800   8     //scaler, added
 #define UNDEFINE15  15
 #define UNDEFINE18  18
 #define UNDEFINE19  19

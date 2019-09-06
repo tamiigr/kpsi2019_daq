@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# module base address
+V895ADR=0x10010000
+
+# configuration parameters
+th=(30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30)
+width=255
+inhibit=0xffff
+
+# address
+TH_ADR=(0x00 0x02 0x04 0x06 0x08 0x0a 0x0c 0x0e 0x10 0x12 0x14 0x16 0x18 0x1a 0x1c 0x1e)
+WIDTH0_ADR=$((V895ADR+0x40))
+WIDTH1_ADR=$((V895ADR+0x42))
+INHIBIT_ADR=$((V895ADR+0x4a))
+
+echo "-------------------------------------------"
+echo "V895 discriminator initialization start!!"
+printf "base address= %s\n" $V895ADR
+echo "-------------------------------------------"
+
+# threshold setting
+for ((i=0; i<16; i++))
+do
+tmp_adr=$((V895ADR+${TH_ADR[i]}))
+cmd=$(printf "cmdvme -ww 0x%x %s" $tmp_adr ${th[i]})
+echo $cmd
+$cmd
+done
+echo ""
+
+# width setting
+cmd=$(printf "cmdvme -ww 0x%x %s" $WIDTH0_ADR $width)
+echo $cmd
+$cmd
+
+cmd=$(printf "cmdvme -ww 0x%x %s" $WIDTH1_ADR $width)
+echo $cmd
+$cmd
+
+echo ""
+
+
+# pattern inhibit setting
+cmd=$(printf "cmdvme -ww 0x%x %s" $INHIBIT_ADR $inhibit)
+echo $cmd
+$cmd
+
+echo "------------------------------"
+echo "Done!!!"
+echo "------------------------------"

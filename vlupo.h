@@ -31,7 +31,7 @@
 #define VLUPO_TS_CLKMODE      0X60   //  W D16
 
 /* VLUPO DAQ MASTER R1.0 */
-#define VLUPO_DM_CLK1M        0x00   // R  D32
+#define VLUPO_DM_CLK10M        0x00   // R  D32
 #define VLUPO_DM_CLK10K       0x04   // R  D32
 #define VLUPO_DM_CLK1K        0x08   // R  D32
 #define VLUPO_DM_LEVEL        0x00   //  W D16
