@@ -23,7 +23,7 @@
 #define A16 0x29
 
 #define LUPOADDR 0x30000000
-#define LUPOMAPN 1
+#define LUPOMAPN 8
 
 //#define USE_RPV
 //#define USE_1190
@@ -46,7 +46,7 @@
 #define OPVETO      0x80
 
 /* Definitions for V1190s */
-#define V1190_BASE_ADR  0x00050000
+#define V1190_BASE_ADR  0x00500000 // now used for KPSI2019
 #define V1190_MAP_SIZE  0x00030000
 #define V1190_MAPN 2  // for DMA 2-3 will be reserved
 #define V1190_MAIKO_ADR 0x00050000
@@ -78,7 +78,7 @@
 
 static int huga[2]={1,2};
 
-/* definition for V830 */
+/* definition for V830, scaler used in KPSI2019 */
 #define V830_MAPN     6
 #define V830_NCH     32
 #define SCAID        10

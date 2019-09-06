@@ -462,6 +462,8 @@ deps_/home/daq/daqconfig/exp/kpsi2019/babildrv.o := \
   /home/daq/daqconfig/exp/kpsi2019/v1190.h \
   /home/daq/daqconfig/exp/kpsi2019/madc32.c \
   /home/daq/daqconfig/exp/kpsi2019/madc32.h \
+  /home/daq/daqconfig/exp/kpsi2019/mqdc32.c \
+  /home/daq/daqconfig/exp/kpsi2019/mqdc32.h \
   /home/daq/daqconfig/exp/kpsi2019/rpv130.c \
   /home/daq/daqconfig/exp/kpsi2019/rpv130.h \
   /home/daq/daqconfig/exp/kpsi2019/tmb2.c \

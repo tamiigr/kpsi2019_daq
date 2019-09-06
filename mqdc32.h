@@ -1,0 +1,69 @@
+/* header file for MQDC32 */
+#define MQDC32_DATA               0x0000
+
+#define MQDC32_THRESHOLD          0x4000
+#define MQDC32_ADDRESS_SOURCE     0x6000
+#define MQDC32_ADDRESS_REG        0x6002
+#define MQDC32_MODULE_ID          0x6004
+#define MQDC32_FAST_VME           0x6006
+#define MQDC32_SOFT_RESET         0x6008
+#define MQDC32_FIRMWARE_REVISION  0x600e
+
+#define MQDC32_IRQ_LEVEL          0x6010
+#define MQDC32_IRQ_VECTOR         0x6012
+#define MQDC32_IRQ_TEST           0x6014
+#define MQDC32_IRQ_RESET          0x6016
+#define MQDC32_IRQ_THRESHOLD      0x6018
+#define MQDC32_MAX_TRANSFER_DATA  0x601a
+
+#define MQDC32_CBLT_MCST_CONTROL  0x6020
+#define MQDC32_CBLT_ADDRESS       0x6022
+#define MQDC32_MCST_ADDRESS       0x6024
+
+#define MQDC32_BUFFER_DATA_LENGTH 0x6030
+#define MQDC32_DATA_LEN_FORMAT    0x6032
+#define MQDC32_READOUT_RESET      0x6034
+#define MQDC32_MULTIEVENT         0x6036
+#define MQDC32_MARKING_TYPE       0x6038
+#define MQDC32_START_ACQ          0x603a
+#define MQDC32_FIFO_RESET         0x603c
+#define MQDC32_DATA_READY         0x603e
+
+#define MQDC32_BANK_OPERATION     0x6040
+#define MQDC32_ADC_RESOLUTION     0x6042
+#define MQDC32_OFFSET_BANK_0      0x6044
+#define MQDC32_OFFSET_BANK_1      0x6046
+#define MQDC32_SLC_OFF            0x6048
+#define MQDC32_SKIP_OORANGE       0x604a
+#define MQDC32_IGNORE_THRESHOLDS  0x604c
+
+#define MQDC32_LIMIT_BANK_0       0x6050
+#define MQDC32_LIMIT_BANK_1       0x6052
+#define MQDC32_EXP_TRIG_DELAY0    0x6054
+#define MQDC32_EXP_TRIG_DELAY1    0x6056
+
+#define MQDC32_INPUT_COUPLING     0x6060
+#define MQDC32_ECL_TERM           0x6062
+#define MQDC32_ECL_GATE1_OSC      0x6064
+#define MQDC32_ECL_FC_RESET       0x6066
+#define MQDC32_GATE_SELECT        0x6068
+#define MQDC32_NIM_GAT1_OSC       0x606a
+#define MQDC32_NIM_FC_RESET       0x606c
+#define MQDC32_NIM_BUSY           0x606e
+
+#define MQDC32_PULSER_STATUS      0x6070
+#define MQDC32_PULSER_DAC         0x6072
+#define MQDC32_RC_BUSNO           0x6080
+#define MQDC32_RC_MODNUM          0x6082
+#define MQDC32_RC_OPCODE          0x6084
+#define MQDC32_RC_ADR             0x6086
+#define MQDC32_RC_DAT             0x6088
+#define MQDC32_SEND_RETURN_STATUS 0x608a
+
+#define MQDC32_RESET_CTR_AB       0x6090
+#define MQDC32_EVCTR_LO           0x6092
+#define MQDC32_EVCTR_HI           0x6094
+#define MQDC32_TS_SOURCES         0x6096
+#define MQDC32_TS_DIVISOR         0x6098
+#define MQDC32_TS_COUNTER_LO      0x609c
+#define MQDC32_TS_COUNTER_HI      0x609e

@@ -51,9 +51,10 @@ void evt(void){
   /*readout of v1190 */
 #ifdef USE_1190
   init_segment(MKSEGID(RCNPEN,F3,SSDT,V1190));
-  v1X90_multi_map_dma_segdata(2, V1190_MAIKO_ADR - V1190_BASE_ADR, V1190_MAPN); 
-  v1X90_multi_map_dma_segdata(3, V1190_BDC1_ADR  - V1190_BASE_ADR, V1190_MAPN); 
-  v1X90_multi_map_dma_segdata(4, V1190_BDC2_ADR  - V1190_BASE_ADR, V1190_MAPN); 
+  v1X90_map_dma_segdata(V1190_MAPN); 
+//  v1X90_multi_map_dma_segdata(2, V1190_MAIKO_ADR - V1190_BASE_ADR, V1190_MAPN); 
+//  v1X90_multi_map_dma_segdata(3, V1190_BDC1_ADR  - V1190_BASE_ADR, V1190_MAPN); 
+//  v1X90_multi_map_dma_segdata(4, V1190_BDC2_ADR  - V1190_BASE_ADR, V1190_MAPN); 
   end_segment(); 
 #endif
 

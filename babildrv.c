@@ -88,6 +88,7 @@ MODULE_AUTHOR("Hidetada Baba");
 #include "babirldrvcaen.c"
 #include "v1190.h"
 #include "madc32.c"
+#include "mqdc32.c"
 #include "rpv130.c"
 #include "tmb2.c"
 #include "vlupomap.c"

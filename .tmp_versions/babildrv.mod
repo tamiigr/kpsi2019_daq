@@ -1,2 +1,2 @@
-/home/daq/daqconfig/exp/e463/babildrv.ko
-/home/daq/daqconfig/exp/e463/babildrv.o
+/home/daq/daqconfig/exp/kpsi2019/babildrv.ko
+/home/daq/daqconfig/exp/kpsi2019/babildrv.o

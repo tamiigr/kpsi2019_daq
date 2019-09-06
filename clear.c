@@ -1,12 +1,7 @@
 void clear(void){
     printk("clear\n");
-  //  v977_map_outset(0, V977_MAPN);
- // v977_map_out_clear(V977_MAPN);
- // v977_map_int_mask(0, V977_MAPN);
- // v977_map_int_level(INTLEVEL, V977_MAPN);
   madc32_map_irq_level(INTLEVEL,MADC32_MAPN); //newly added
   vlupodm_clear_map(LUPOMAPN);
- // vlupodm_enable_interrupt_map(LUPOMAPN);
 #ifdef USE_V775
   //  v7XX_map_clear(V775_MAPN);
   v7XX_map_int_level(INTLEVEL, V775_MAPN);
@@ -14,18 +9,12 @@ void clear(void){
 #endif
 
 #ifdef USE_1190
-  v1X90_multi_map_clear(V1190_MAIKO_ADR - V1190_BASE_ADR,V1190_MAPN);
-  v1X90_multi_map_clear(V1190_BDC1_ADR  - V1190_BASE_ADR,V1190_MAPN);
-  v1X90_multi_map_clear(V1190_BDC2_ADR  - V1190_BASE_ADR,V1190_MAPN);
+   v1X90_map_clear(V1190_MAPN);
+  //v1X90_multi_map_clear(V1190_MAIKO_ADR - V1190_BASE_ADR,V1190_MAPN);
+  //v1X90_multi_map_clear(V1190_BDC1_ADR  - V1190_BASE_ADR,V1190_MAPN);
+  //v1X90_multi_map_clear(V1190_BDC2_ADR  - V1190_BASE_ADR,V1190_MAPN);
 #endif
 
-  //rpv130_map_level(0, RPV130MAPN);
-  //rpv130_map_clear(RPV130MAPN);
-
- //if(mpflag){
-    //rpv130_map_pulse(OPBUSYCL,RPV130MAPN);
-     // how to clear the lupo veto signal??
-     //vlupodm_pulse_map(LUPOMAPN, 1);
- // }
-  //  rpv130_map_pulse(OPBUSYCL,RPV130MAPN);
+ 
+     vlupodm_pulse_map(LUPOMAPN,1);
 }
