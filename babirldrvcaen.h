@@ -107,6 +107,12 @@
 #define V977_DUMMY_REG      0x002a
 #define V977_SOFT_RESET     0x002e
 
-/* v830 */
+/* V830 */
 #define V830_COUNTER_0      0x1000
 #define V830_SOFT_CLE       0x1122
+#define V830_NCH            32
+
+/* V260 scaler */
+#define V260_NCH            16
+#define V260_CLEAR          0x0050
+#define V260_COUNTER_0      0x1000

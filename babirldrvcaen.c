@@ -304,4 +304,24 @@ int v830_map_ridf_nscaler(int nmap){
   return scrsize;
 }
 
+
+/* functions for V260 */
+void v260_map_clear(int nmap){
+  short sval;
+  sval=1;
+  univ_map_write16(V260_CLEAR, &sval, nmap);  
+}
+
+
+int v260_map_ridf_nscaler(int nmap){
+  int i;
+  for(i=0; i<V260_NCH; i++){
+    univ_map_read32(V260_COUNTER_0+i*4, (long *)(data+mp), nmap);
+    mp+=2;
+  }
+  scrsize+=2*V260_NCH;
+  if(eventsize>0) eventsize+=2*V260_NCH;
+  return scrsize;
+}
+
 #endif

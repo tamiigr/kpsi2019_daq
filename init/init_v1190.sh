@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # module base address
-V1X90ADR=0x00070000
+V1X90ADR=0x88880000
 
 # configuration parameters
 WIN_WID=60    #25ns unit
