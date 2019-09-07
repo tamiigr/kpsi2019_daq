@@ -60,10 +60,14 @@ void startup(void){
   madc32_map_module_id(0, MADC32_MAPN);
   madc32_map_irq_level(0, MADC32_MAPN);
   madc32_map_input_range(0x1, MADC32_MAPN);   // 0:4V, 1:10V, 2:8V
+  madc32_map_use_gg(0x1, MADC32_MAPN);
+  madc32_map_hold_delay(0, 0, MADC32_MAPN);
+  madc32_map_hold_width(0, 80, MADC32_MAPN);  // in unit of 50ns, 80=4000ns
+  madc32_map_nim_busy(1, MADC32_MAPN);        // internal gate output
   madc32_map_start_acq(MADC32_MAPN);
   madc32_map_clear(MADC32_MAPN);
   madc32_map_fifo_reset(MADC32_MAPN);
-  madc32_map_reset_ctr_ab(MADC32_MAPN);  // reset time stamp
+  madc32_map_reset_ctr_ab(MADC32_MAPN);       // reset time stamp/trig num
   madc32_map_irq_level(INTLEVEL, MADC32_MAPN);
 
 
@@ -73,6 +77,9 @@ void startup(void){
 #ifdef USE_MQDC
   mqdc32_map_stop_acq(MQDC32_MAPN);
   mqdc32_map_module_id(1, MQDC32_MAPN);
+  mqdc32_map_marking_type(1, MQDC32_MAPN);
+  mqdc32_map_ts_sources(1, MQDC32_MAPN);
+  mqdc32_map_nim_gat1_osc(1, MQDC32_MAPN);
   mqdc32_map_start_acq(MQDC32_MAPN);  
   mqdc32_map_clear(MQDC32_MAPN);
   mqdc32_map_fifo_reset(MQDC32_MAPN);
