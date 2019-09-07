@@ -3,18 +3,22 @@ void unmap(void){
 
 #ifdef USE_MADC
   univ_end_window(MADC32_MAPN);
-  //  univ_end_dma(1);
+#ifdef DMA_MADC  
+  univ_end_dma(MADC32_MAPN);
+#endif
 #endif
 
 
 #ifdef USE_MQDC
   univ_end_window(MQDC32_MAPN);
-  //  univ_end_dma(1);
+#ifdef DMA_MQDC  
+  univ_end_dma(MQDC32_MAPN);
+#endif
 #endif
 
 #ifdef USE_1190
   univ_end_window(V1190_MAPN);
-  univ_end_dma(2);
+  univ_end_dma(V1190_MAPN);
 #endif
 
   printk("unmap done\n");

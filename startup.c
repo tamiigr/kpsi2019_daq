@@ -4,19 +4,23 @@ void map(void){
   /* V1190 mapping */
 #ifdef USE_1190
   univ_init_window(V1190_BASE_ADR, V1190_MAP_SIZE, A32, V1190_MAPN);
-  univ_init_dma(V1190_BASE_ADR, DMASIZE, 2);
+  univ_init_dma(V1190_BASE_ADR, DMASIZE, V1190_MAPN);
 #endif
 
   /* MADC32 mapping */
 #ifdef USE_MADC
   univ_init_window(MADC32_BASE_ADR, MADC32_MAP_SIZE, A32, MADC32_MAPN);
-  //  univ_init_dma(MADC32_BASE_ADR, DMASIZE, 1);
+#ifdef DMA_MADC
+  univ_init_dma(MADC32_BASE_ADR, DMASIZE, MADC32_MAPN);
+#endif
 #endif
 
   /* MQDC32 mapping */
 #ifdef USE_MQDC
   univ_init_window(MQDC32_BASE_ADR, MQDC32_MAP_SIZE, A32, MQDC32_MAPN);
-  //  univ_init_dma(MADC32_BASE_ADR, DMASIZE, 1);
+#ifdef DMA_MQDC
+  univ_init_dma(MQDC32_BASE_ADR, DMASIZE, MQDC32_MAPN);
+#endif
 #endif
 
   /* V830 mapping */

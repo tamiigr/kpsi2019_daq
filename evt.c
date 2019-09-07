@@ -22,8 +22,15 @@ void evt(void){
   /* readout of MADC32 */
 #ifdef USE_MADC
   init_segment(MKSEGID(RCNPEN,F3,SSDE,MADC32));
+
+#ifndef DMA_MADC
   madc32_map_segdata(MADC32_MAPN);
-  //  madc32_map_dma_segdata(1, MADC32_MAPN);
+#endif
+
+#ifdef DMA_MADC
+  madc32_map_dma_segdata(MADC32_MAPN, MADC32_MAPN);
+#endif
+
   end_segment();
   madc32_map_clear(MADC32_MAPN);
 #endif
@@ -31,7 +38,15 @@ void evt(void){
   /* readout of MQDC32 */
 #ifdef USE_MQDC
   init_segment(MKSEGID(RCNPEN,F3,NAIE,MQDC32));
+
+#ifndef DMA_MQDC
   mqdc32_map_segdata(MQDC32_MAPN);
+#endif
+
+#ifdef DMA_MQDC
+  mqdc32_map_dma_segdata(MQDC32_MAPN, MQDC32_MAPN);
+#endif
+
   end_segment();
   mqdc32_map_clear(MQDC32_MAPN);
 #endif

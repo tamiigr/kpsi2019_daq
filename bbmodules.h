@@ -39,19 +39,16 @@
 #define MADC32_BASE_ADR 0x32010000
 #define MADC32_MAP_SIZE 0xa000
 #define MADC32_MAPN     1
-#define MADC32_DMAN     1
 
 /* Definitions for MQDC32 */
 #define MQDC32_BASE_ADR 0x33000000
 #define MQDC32_MAP_SIZE 0xa000
-#define MQDC32_MAPN     3
-#define MQDC32_DMAN     2
+#define MQDC32_MAPN     2
 
 /* Definitions for V1190 */
 #define V1190_BASE_ADR  0x11110000 // now used for KPSI2019
 #define V1190_MAP_SIZE  0x00010000
-#define V1190_MAPN 2
-#define V1190_DMAN 3
+#define V1190_MAPN 3
 
 /* Definitions for V260 scaler */
 #define V260_MAPN     6
