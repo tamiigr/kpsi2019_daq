@@ -21,7 +21,7 @@ void map(void){
 
   /* V830 mapping */
 #ifdef USE_V260
-  univ_init_window(V260_ADR, V260_REGSIZE, A32, V260_MAPN);  
+  univ_init_window(V260_ADR, V260_REGSIZE, A24, V260_MAPN);  
 #endif
 
   printk("mapping done\n");

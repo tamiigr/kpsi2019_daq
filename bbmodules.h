@@ -21,6 +21,7 @@
 
 #define A32 0x09
 #define A16 0x29
+#define A24 0x39
 
 #define USE_1190
 #define USE_MADC
@@ -49,6 +50,6 @@
 /* Definitions for V260 scaler */
 #define V260_MAPN     6
 #define SCAID        10
-#define V260_ADR     0x66660000
-#define V260_REGSIZE     0x2000
+#define V260_ADR     0x666600
+#define V260_REGSIZE   0x2000
 

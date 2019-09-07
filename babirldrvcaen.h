@@ -114,5 +114,5 @@
 
 /* V260 scaler */
 #define V260_NCH            16
-#define V260_CLEAR          0x0050
-#define V260_COUNTER_0      0x1000
+#define V260_CLEAR          0x50
+#define V260_COUNTER_0      0x10
