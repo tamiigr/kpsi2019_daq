@@ -72,12 +72,12 @@ void startup(void){
   /* configure MQDC32 */
 #ifdef USE_MQDC
   mqdc32_map_stop_acq(MQDC32_MAPN);
+  mqdc32_map_module_id(1, MQDC32_MAPN);
+  mqdc32_map_start_acq(MQDC32_MAPN);  
   mqdc32_map_clear(MQDC32_MAPN);
   mqdc32_map_fifo_reset(MQDC32_MAPN);
-  mqdc32_map_module_id(1, MQDC32_MAPN);
-  mqdc32_map_irq_level(0, MQDC32_MAPN);
   mqdc32_map_reset_ctr_ab(1, MQDC32_MAPN);
-  mqdc32_map_start_acq(MQDC32_MAPN);    
+  mqdc32_map_irq_level(0, MQDC32_MAPN);
 #endif
   
   /* initialize v260 */

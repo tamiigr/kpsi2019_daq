@@ -34,7 +34,9 @@ __attribute__((section("__versions"))) = {
 	{ 0x26e96637, "request_irq" },
 	{ 0x19cacd0, "init_waitqueue_head" },
 	{ 0x4086729e, "register_chrdev" },
+	{ 0xd08c3dea, "univ_init_dma" },
 	{ 0xd9aa794d, "univ_init_window" },
+	{ 0xe5541f0a, "univ_end_dma" },
 	{ 0x244078c1, "univ_end_window" },
 	{ 0x1b7d4074, "printk" },
 	{ 0xc192d491, "unregister_chrdev" },
@@ -47,4 +49,4 @@ __attribute__((section(".modinfo"))) =
 "depends=bb-sva041";
 
 
-MODULE_INFO(srcversion, "8D36D4E0F1CC80BF900E0C2");
+MODULE_INFO(srcversion, "FFE63942763A09A5C4CA580");

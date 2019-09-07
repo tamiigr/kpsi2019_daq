@@ -1,11 +1,6 @@
 void unmap(void){
   univ_end_window(LUPOMAPN);
 
-#ifdef USE_1190
-  univ_end_window(V1190_MAPN);
-  univ_end_dma(2);
-#endif
-
 #ifdef USE_MADC
   univ_end_window(MADC32_MAPN);
   //  univ_end_dma(1);
@@ -15,6 +10,11 @@ void unmap(void){
 #ifdef USE_MQDC
   univ_end_window(MQDC32_MAPN);
   //  univ_end_dma(1);
+#endif
+
+#ifdef USE_1190
+  univ_end_window(V1190_MAPN);
+  univ_end_dma(2);
 #endif
 
   printk("unmap done\n");

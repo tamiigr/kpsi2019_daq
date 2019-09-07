@@ -22,7 +22,7 @@
 #define A32 0x09
 #define A16 0x29
 
-//#define USE_1190
+#define USE_1190
 #define USE_MADC
 #define USE_MQDC
 #define USE_V260
@@ -32,7 +32,7 @@
 #define LUPOMAPN 8
 
 /* Definitions for V1190 */
-#define V1190_BASE_ADR  0x00500000 // now used for KPSI2019
+#define V1190_BASE_ADR  0x11110000 // now used for KPSI2019
 #define V1190_MAP_SIZE  0x00010000
 #define V1190_MAPN 2 
 
