@@ -5,7 +5,7 @@ V1X90ADR=0x11110000
 
 # configuration parameters
 WIN_WID=80    #25ns unit
-WIN_OFS=-80   #25ns unit
+WIN_OFS=-120   #25ns unit
 SW_MRG=0x8    #25ns unit
 REJ_MRG=0x4   #25ns unit
 EDGE_DET=0x3 #0:pair, 1:trading, 2:leading, 3:lead & trad
