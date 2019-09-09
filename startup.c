@@ -17,13 +17,15 @@ void map(void){
 
   /* MQDC32 mapping */
 #ifdef USE_MQDC
-  univ_init_window(MQDC32_BASE_ADR, MQDC32_MAP_SIZE, A32, MQDC32_MAPN);
+  univ_init_window(MQDC32_BASE_ADR1, MQDC32_MAP_SIZE, A32, MQDC32_MAPN1);
+  univ_init_window(MQDC32_BASE_ADR2, MQDC32_MAP_SIZE, A32, MQDC32_MAPN2);
 #ifdef DMA_MQDC
-  univ_init_dma(MQDC32_BASE_ADR, DMASIZE, MQDC32_MAPN);
+  univ_init_dma(MQDC32_BASE_ADR1, DMASIZE, MQDC32_MAPN1);
+  univ_init_dma(MQDC32_BASE_ADR2, DMASIZE, MQDC32_MAPN2);
 #endif
 #endif
 
-  /* V830 mapping */
+  /* V260 mapping */
 #ifdef USE_V260
   univ_init_window(V260_ADR, V260_REGSIZE, A24, V260_MAPN);  
 #endif
@@ -68,27 +70,43 @@ void startup(void){
   madc32_map_hold_delay(0, 0, MADC32_MAPN);
   madc32_map_hold_width(0, 80, MADC32_MAPN);  // in unit of 50ns, 80=4000ns
   madc32_map_nim_busy(1, MADC32_MAPN);        // internal gate output
+  madc32_map_marking_type(1, MADC32_MAPN);
+  madc32_map_ts_sources(1, MADC32_MAPN);
+  madc32_map_nim_gat1_osc(1, MADC32_MAPN);
   madc32_map_start_acq(MADC32_MAPN);
   madc32_map_clear(MADC32_MAPN);
   madc32_map_fifo_reset(MADC32_MAPN);
   madc32_map_reset_ctr_ab(MADC32_MAPN);       // reset time stamp/trig num
   madc32_map_irq_level(INTLEVEL, MADC32_MAPN);
-
-
 #endif
 
   /* configure MQDC32 */
 #ifdef USE_MQDC
-  mqdc32_map_stop_acq(MQDC32_MAPN);
-  mqdc32_map_module_id(1, MQDC32_MAPN);
-  mqdc32_map_marking_type(1, MQDC32_MAPN);
-  mqdc32_map_ts_sources(1, MQDC32_MAPN);
-  mqdc32_map_nim_gat1_osc(1, MQDC32_MAPN);
-  mqdc32_map_start_acq(MQDC32_MAPN);  
-  mqdc32_map_clear(MQDC32_MAPN);
-  mqdc32_map_fifo_reset(MQDC32_MAPN);
-  mqdc32_map_reset_ctr_ab(1, MQDC32_MAPN);
-  mqdc32_map_irq_level(0, MQDC32_MAPN);
+  /* NaI QDC */
+  mqdc32_map_stop_acq(MQDC32_MAPN1);
+  mqdc32_map_module_id(1, MQDC32_MAPN1);
+  mqdc32_map_marking_type(0, MQDC32_MAPN1);
+  mqdc32_map_bank_operation(0, MQDC32_MAPN1);
+  mqdc32_map_limit_bank_1(255, MQDC32_MAPN1);  //255: no limitation
+  mqdc32_map_nim_gat1_osc(0, MQDC32_MAPN1);
+  mqdc32_map_start_acq(MQDC32_MAPN1);  
+  mqdc32_map_clear(MQDC32_MAPN1);
+  mqdc32_map_fifo_reset(MQDC32_MAPN1);
+  mqdc32_map_reset_ctr_ab(1, MQDC32_MAPN1);
+  mqdc32_map_irq_level(0, MQDC32_MAPN1);
+
+  /* LaBr+plastic QDC */
+  mqdc32_map_stop_acq(MQDC32_MAPN2);
+  mqdc32_map_module_id(2, MQDC32_MAPN2);
+  mqdc32_map_marking_type(0, MQDC32_MAPN2);
+  mqdc32_map_bank_operation(0, MQDC32_MAPN2);
+  mqdc32_map_limit_bank_1(255, MQDC32_MAPN2);  //255: no limitation
+  mqdc32_map_nim_gat1_osc(0, MQDC32_MAPN2);
+  mqdc32_map_start_acq(MQDC32_MAPN2);  
+  mqdc32_map_clear(MQDC32_MAPN2);
+  mqdc32_map_fifo_reset(MQDC32_MAPN2);
+  mqdc32_map_reset_ctr_ab(1, MQDC32_MAPN2);
+  mqdc32_map_irq_level(0, MQDC32_MAPN2);
 #endif
   
   /* initialize v260 */

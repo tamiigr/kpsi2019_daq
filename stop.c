@@ -10,9 +10,11 @@ void unmap(void){
 
 
 #ifdef USE_MQDC
-  univ_end_window(MQDC32_MAPN);
+  univ_end_window(MQDC32_MAPN1);
+  univ_end_window(MQDC32_MAPN2);
 #ifdef DMA_MQDC  
-  univ_end_dma(MQDC32_MAPN);
+  univ_end_dma(MQDC32_MAPN1);
+  univ_end_dma(MQDC32_MAPN2);
 #endif
 #endif
 
@@ -34,8 +36,10 @@ void stop(void){
 #endif
 
 #ifdef USE_MQDC
-  mqdc32_map_stop_acq(MQDC32_MAPN);
-  mqdc32_map_clear(MQDC32_MAPN);
+  mqdc32_map_stop_acq(MQDC32_MAPN1);
+  mqdc32_map_clear(MQDC32_MAPN1);
+  mqdc32_map_stop_acq(MQDC32_MAPN2);
+  mqdc32_map_clear(MQDC32_MAPN2);
 #endif
 
  // vlupodm_disable_interrupt_map(LUPOMAPN);

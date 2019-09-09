@@ -41,9 +41,11 @@
 #define MADC32_MAPN     1
 
 /* Definitions for MQDC32 */
-#define MQDC32_BASE_ADR 0x33000000
-#define MQDC32_MAP_SIZE 0xa000
-#define MQDC32_MAPN     2
+#define MQDC32_MAP_SIZE  0xa000
+#define MQDC32_BASE_ADR1 0x33000000
+#define MQDC32_MAPN1     2
+#define MQDC32_BASE_ADR2 0x34000000
+#define MQDC32_MAPN2     4
 
 /* Definitions for V1190 */
 #define V1190_BASE_ADR  0x11110000 // now used for KPSI2019

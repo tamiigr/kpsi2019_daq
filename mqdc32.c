@@ -29,6 +29,10 @@ void mqdc32_map_stop_acq(int n){
   univ_map_write16(MQDC32_START_ACQ, &val, n);  
 }
 
+void mqdc32_map_bank_operation(short val, int n){
+  univ_map_write16(MQDC32_BANK_OPERATION, &val, n);  
+}
+
 void mqdc32_map_irq_level(short val, int n){
   univ_map_write16(MQDC32_IRQ_LEVEL, &val, n);  
 }
@@ -79,6 +83,14 @@ void mqdc32_fast_vme(int n){
   short val;
   val=0xfa;
   univ_map_write16(MQDC32_FAST_VME, &val, n);  
+}
+
+void mqdc32_map_limit_bank_0(short val, int n){
+  univ_map_write16(MQDC32_LIMIT_BANK_0, &val, n);
+}
+
+void mqdc32_map_limit_bank_1(short val, int n){
+  univ_map_write16(MQDC32_LIMIT_BANK_1, &val, n);
 }
 
 

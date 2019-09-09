@@ -37,18 +37,33 @@ void evt(void){
 
   /* readout of MQDC32 */
 #ifdef USE_MQDC
-  init_segment(MKSEGID(RCNPEN,F3,NAIE,MQDC32));
 
+  /* readout for NaI */
+  init_segment(MKSEGID(RCNPEN,F3,NAIE,MQDC32));
 #ifndef DMA_MQDC
-  mqdc32_map_segdata(MQDC32_MAPN);
+  mqdc32_map_segdata(MQDC32_MAPN1);
 #endif
 
 #ifdef DMA_MQDC
-  mqdc32_map_dma_segdata(MQDC32_MAPN, MQDC32_MAPN);
+  mqdc32_map_dma_segdata(MQDC32_MAPN1, MQDC32_MAPN1);
 #endif
 
   end_segment();
-  mqdc32_map_clear(MQDC32_MAPN);
+
+  /* readout for LaBr+plastic */
+  init_segment(MKSEGID(RCNPEN,F3,(NAIE+1),MQDC32));
+#ifndef DMA_MQDC
+  mqdc32_map_segdata(MQDC32_MAPN2);
+#endif
+
+#ifdef DMA_MQDC
+  mqdc32_map_dma_segdata(MQDC32_MAPN2, MQDC32_MAPN2);
+#endif
+
+  end_segment();
+
+  mqdc32_map_clear(MQDC32_MAPN1);
+  mqdc32_map_clear(MQDC32_MAPN2);
 #endif
 
   /*readout of V1190 */
