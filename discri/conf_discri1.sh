@@ -4,7 +4,7 @@
 V895ADR=0x10010000
 
 # configuration parameters
-th=(30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30) # (in mV)
+th=(5 4 3 4 350 350 10 10 10 10 10 10 10 10 10 10) # (in mV)
 width=255 # (0:5ns, 255:40ns)
 inhibit=0xffff
 
@@ -19,7 +19,7 @@ echo "V895 discriminator initialization start!!"
 printf "base address= %s\n" $V895ADR
 echo "-------------------------------------------"
 
-# threshold setting
+ threshold setting
 for ((i=0; i<16; i++))
 do
 tmp_adr=$((V895ADR+${TH_ADR[i]}))

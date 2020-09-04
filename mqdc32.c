@@ -79,7 +79,7 @@ void mqdc32_map_module_id(short val, int n){
   univ_map_write16(MQDC32_MODULE_ID, &val, n);
 }
 
-void mqdc32_fast_vme(int n){
+void mqdc32_map_fast_vme(int n){
   short val;
   val=0xfa;
   univ_map_write16(MQDC32_FAST_VME, &val, n);  

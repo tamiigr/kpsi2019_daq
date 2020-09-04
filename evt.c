@@ -13,6 +13,7 @@
 void evt(void){
   //  printk("Event \n");
 
+
   madc32_map_irq_level(0,MADC32_MAPN); //newly added
   
   /* Event */

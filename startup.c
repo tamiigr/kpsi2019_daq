@@ -42,12 +42,14 @@ void startup(void){
   // Output Config
   val = 0x1;
   vlupodm_outconf0_map(LUPOMAPN, val);
-  val = 0x4;
+  //  val = 0x4;
+  val = 0x1;
   vlupodm_outconf1_map(LUPOMAPN, val);
   val = 0x32;
   vlupodm_outconf2_map(LUPOMAPN, val);
   val = 0x10;
   vlupodm_outconf3_map(LUPOMAPN, val); 
+
   vlupodm_clear_map(LUPOMAPN);
   
   // vlupodm_enable_interrupt_map(LUPOMAPN);
@@ -68,7 +70,7 @@ void startup(void){
   madc32_map_input_range(0x1, MADC32_MAPN);   // 0:4V, 1:10V, 2:8V
   madc32_map_use_gg(0x1, MADC32_MAPN);
   madc32_map_hold_delay(0, 0, MADC32_MAPN);
-  madc32_map_hold_width(0, 80, MADC32_MAPN);  // in unit of 50ns, 80=4000ns
+  madc32_map_hold_width(0, 40, MADC32_MAPN);  // in unit of 50ns, 80=4000ns
   madc32_map_nim_busy(1, MADC32_MAPN);        // internal gate output
   madc32_map_marking_type(1, MADC32_MAPN);
   madc32_map_ts_sources(1, MADC32_MAPN);
@@ -89,6 +91,7 @@ void startup(void){
   mqdc32_map_bank_operation(0, MQDC32_MAPN1);
   mqdc32_map_limit_bank_1(255, MQDC32_MAPN1);  //255: no limitation
   mqdc32_map_nim_gat1_osc(0, MQDC32_MAPN1);
+  //  mqdc32_map_fast_vme(MQDC32_MAPN1);
   mqdc32_map_start_acq(MQDC32_MAPN1);  
   mqdc32_map_clear(MQDC32_MAPN1);
   mqdc32_map_fifo_reset(MQDC32_MAPN1);
@@ -102,6 +105,7 @@ void startup(void){
   mqdc32_map_bank_operation(0, MQDC32_MAPN2);
   mqdc32_map_limit_bank_1(255, MQDC32_MAPN2);  //255: no limitation
   mqdc32_map_nim_gat1_osc(0, MQDC32_MAPN2);
+  //  mqdc32_map_fast_vme(MQDC32_MAPN2);
   mqdc32_map_start_acq(MQDC32_MAPN2);  
   mqdc32_map_clear(MQDC32_MAPN2);
   mqdc32_map_fifo_reset(MQDC32_MAPN2);
